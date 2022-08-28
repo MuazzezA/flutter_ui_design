@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'screens/welcome_screen.dart';
+import 'package:plants/routes.dart';
+import 'package:plants/theme/default_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,11 +12,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Plants',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const WelcomeScreen(),
+      theme: defaultTheme(),
+      routes: routes,
+      initialRoute: "/",
     );
   }
 }
