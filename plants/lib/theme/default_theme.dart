@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 ThemeData defaultTheme() {
   return ThemeData(
-    scaffoldBackgroundColor: const Color(0xffEEEEEE),
-    primaryColor: const Color(0xffEEEEEE),
-    // primarySwatch:  const Color(0xffE8E8E8),
-    //textTheme: GoogleFonts.monne
+    scaffoldBackgroundColor: const Color(0xffEFEAD8),
+    primaryColor: const Color(0xffBBBFCA),
+    textTheme: GoogleFonts.montserratTextTheme(),
   );
 }
