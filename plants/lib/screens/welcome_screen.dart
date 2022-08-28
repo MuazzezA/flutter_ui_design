@@ -48,7 +48,7 @@ class WelcomeScreen extends StatelessWidget {
             alignment: const Alignment(0, 0.9),
             child: GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, "/");
+                Navigator.pushNamed(context, "/home");
               },
               child: Container(
                 decoration: const BoxDecoration(
