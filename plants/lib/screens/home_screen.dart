@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:plants/widgets/plant_container.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -31,6 +32,12 @@ class _HomeScreenState extends State<HomeScreen>
 
   @override
   Widget build(BuildContext context) {
+    Map _plantsInfo = {
+      'name': 'Plant Name',
+      'desc': 'Desc: Lorem Ipsum es un texto de marcador de posición comúnmente utilizado en las industrias gráficas ' +
+          'gráficas y editoriales para previsualizar diseños y maquetas visuales.',
+    };
+
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.black,
@@ -54,49 +61,51 @@ class _HomeScreenState extends State<HomeScreen>
                         alignment: Alignment.topLeft),
                   ),
                 ),
-                Stack(
-                  children: [
-                    Align(
-                      alignment: const Alignment(0, -0.6),
-                      child: Container(
-                        height: 30,
-                        width: double.infinity,
-                        decoration: const BoxDecoration(
-                          color: Colors.black,
-                        ),
-                      ),
+                Container(
+                  height: 30,
+                  width: double.infinity,
+                  decoration: const BoxDecoration(
+                    color: Colors.black,
+                  ),
+                  child: const Center(
+                    child: Text(
+                      "Plants" + " - " + "World",
+                      style: TextStyle(
+                          color: Color(0xffCFD2CF),
+                          fontWeight: FontWeight.w200,
+                          fontSize: 25),
                     ),
-                    // SizedBox(
-                    //   height: 120,
-                    //   child: RotationTransition(
-                    //     turns: Tween(begin: 0.0, end: 1.0).animate(controller),
-                    //     child: const Image(
-                    //         image: AssetImage("assets/daisy_yellow.png")),
-                    //   ),
-                    // ),
-                    // Align(
-                    //   alignment: Alignment.topRight,
-                    //   child: SizedBox(
-                    //     height: 120,
-                    //     child: RotationTransition(
-                    //       turns:
-                    //           Tween(begin: 0.0, end: 1.0).animate(controller),
-                    //       child: const Image(
-                    //           image: AssetImage("assets/daisy_blue.png")),
-                    //     ),
-                    //   ),
-                    // ),
-                    const Align(
-                      alignment: Alignment.center,
-                      child: Text(
-                        "Plants World",
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 10, 72, 12),
-                            fontWeight: FontWeight.w200,
-                            fontSize: 25),
-                      ),
-                    ),
-                  ],
+                  ),
+                ),
+                GestureDetector(
+                  onTap: (() {}),
+                  child: plantContainer(
+                      imagePath: "assets/plants (9).png", info: _plantsInfo),
+                ),
+                GestureDetector(
+                  onTap: (() {}),
+                  child: plantContainer(
+                      imagePath: "assets/plants (7).png", info: _plantsInfo),
+                ),
+                GestureDetector(
+                  onTap: (() {}),
+                  child: plantContainer(
+                      imagePath: "assets/plants (1).png", info: _plantsInfo),
+                ),
+                GestureDetector(
+                  onTap: (() {}),
+                  child: plantContainer(
+                      imagePath: "assets/plants (4).png", info: _plantsInfo),
+                ),
+                GestureDetector(
+                  onTap: (() {}),
+                  child: plantContainer(
+                      imagePath: "assets/plants (8).png", info: _plantsInfo),
+                ),
+                GestureDetector(
+                  onTap: (() {}),
+                  child: plantContainer(
+                      imagePath: "assets/plants (3).png", info: _plantsInfo),
                 ),
               ],
             ),
