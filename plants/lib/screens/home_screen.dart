@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:plants/widgets/plant_container.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -11,25 +8,7 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen>
-    with SingleTickerProviderStateMixin {
-  late AnimationController controller;
-  late Animation sizeAnimation;
-
-  @override
-  void initState() {
-    super.initState();
-    controller =
-        AnimationController(vsync: this, duration: const Duration(seconds: 30))
-          ..repeat();
-  }
-
-  @override
-  void dispose() {
-    controller.dispose();
-    super.dispose();
-  }
-
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     Map _plantsInfo = {
@@ -41,8 +20,12 @@ class _HomeScreenState extends State<HomeScreen>
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.black,
-          actions: const [
-            Icon(Icons.person),
+          actions: [
+            IconButton(
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, "/profile");
+                },
+                icon: Icon(Icons.person)),
           ],
           leading: const Icon(Icons.format_list_bulleted),
         ),
@@ -69,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen>
                   ),
                   child: const Center(
                     child: Text(
-                      "Plants" + " - " + "World",
+                      "Plants" " - " "World",
                       style: TextStyle(
                           color: Color(0xffCFD2CF),
                           fontWeight: FontWeight.w200,
