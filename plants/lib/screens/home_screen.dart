@@ -18,14 +18,15 @@ class _HomeScreenState extends State<HomeScreen> {
     };
 
     return Scaffold(
+        backgroundColor: const Color.fromARGB(255, 156, 181, 125),
         appBar: AppBar(
           backgroundColor: Colors.black,
           actions: [
             IconButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, "/profile");
+                  Navigator.pushNamed(context, "/profile");
                 },
-                icon: Icon(Icons.person)),
+                icon: const Icon(Icons.person)),
           ],
           leading: const Icon(Icons.format_list_bulleted),
         ),
